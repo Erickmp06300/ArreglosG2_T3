@@ -10,6 +10,8 @@ namespace Arreglos.Logica
         private int _tope;
         private int[] _arreglo;
 
+
+
         //Constructor
         public MiArreglo(int n)
         {
@@ -94,6 +96,32 @@ namespace Arreglos.Logica
             }
         }
 
+        //Metodo Insertar
+        public void Insertar(int numero, int posicion)
+        {
+            if (EstaLleno)
+            {
+                throw new Exception("El arreglo esta lleno");
+
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+            for (int i = _tope; i > posicion; i--)
+            {
+                _arreglo[i] = _arreglo[i - 1];
+
+            }
+
+            _arreglo[posicion] = numero;
+            _tope++;
+        }
+
         public override string ToString()
         {
             if (EstaVacio)
@@ -120,5 +148,4 @@ namespace Arreglos.Logica
 
 
     }
-
 }
