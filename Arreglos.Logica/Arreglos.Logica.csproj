@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Arreglos.UI.Consola\Arreglos.UI.Consola.csproj" />
+  </ItemGroup>
+
 </Project>
